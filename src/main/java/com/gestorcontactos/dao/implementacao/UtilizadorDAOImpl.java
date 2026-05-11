@@ -1,4 +1,4 @@
-package dao.implementacao;
+package com.gestorcontactos.dao.implementacao;
 
 import java.sql.Connection;
 import java.sql.Date;
@@ -6,9 +6,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import dao.interfaces.IUtilizadorDAO;
-import dao_singleton.ConexaoDB;
-import model.Utilizador;
+import com.gestorcontactos.dao.interfaces.IUtilizadorDAO;
+import com.gestorcontactos.dao_singleton.ConexaoDB;
+import com.gestorcontactos.model.Utilizador;
 
 public class UtilizadorDAOImpl implements IUtilizadorDAO {
 
@@ -27,7 +27,7 @@ public class UtilizadorDAOImpl implements IUtilizadorDAO {
             stmt.setString(1, utilizador.getNome());
             stmt.setString(2, utilizador.getUsername());
             stmt.setString(3, utilizador.getSenha());
-            stmt.setDate(4, Date.valueOf(utilizador.getDataCriacao()));
+            stmt.setDate(4, Date.valueOf(utilizador.getdataCriacao()));
             stmt.executeUpdate();
         } catch (SQLException e) {
             System.out.println("Erro ao cadastrar utilizador.");
@@ -58,7 +58,7 @@ public class UtilizadorDAOImpl implements IUtilizadorDAO {
 
                     Date dataCriacao = rs.getDate("data_criacao");
                     if (dataCriacao != null) {
-                        utilizador.setDataCriacao(dataCriacao.toLocalDate());
+                        utilizador.setdataCriacao(dataCriacao.toLocalDate());
                     }
                 }
             }

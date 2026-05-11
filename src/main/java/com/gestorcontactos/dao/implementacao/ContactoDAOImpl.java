@@ -1,13 +1,13 @@
-package dao.implementacao;
+package com.gestorcontactos.dao.implementacao;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-import dao.interfaces.IContactoDAO;
-import dao_singleton.ConexaoDB;
-import model.Categoria;
-import model.Contacto;
+import com.gestorcontactos.dao.interfaces.IContactoDAO;
+import com.gestorcontactos.dao_singleton.ConexaoDB;
+import com.gestorcontactos.model.Categoria;
+import com.gestorcontactos.model.Contacto;
 
 public class ContactoDAOImpl implements IContactoDAO {
 

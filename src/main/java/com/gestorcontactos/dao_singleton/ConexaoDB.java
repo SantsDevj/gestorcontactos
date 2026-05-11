@@ -1,4 +1,4 @@
-package dao_singleton;
+package com.gestorcontactos.dao_singleton;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

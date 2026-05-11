@@ -1,4 +1,4 @@
-package controller;
+package com.gestorcontactos.controller;
 
 import javafx.animation.FadeTransition;
 import javafx.fxml.FXML;
@@ -10,8 +10,8 @@ import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-import service.AuthService;
-import service.ServiceLocator;
+import com.gestorcontactos.service.AuthService;
+import com.gestorcontactos.service.ServiceLocator;
 
 import java.net.URL;
 import java.util.ResourceBundle;

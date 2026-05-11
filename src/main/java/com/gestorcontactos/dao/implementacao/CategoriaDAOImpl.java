@@ -1,4 +1,4 @@
-package dao.implementacao;
+package com.gestorcontactos.dao.implementacao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,9 +7,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import dao.interfaces.ICategoriaDAO;
-import dao_singleton.ConexaoDB;
-import model.Categoria;
+import com.gestorcontactos.dao.interfaces.ICategoriaDAO;
+import com.gestorcontactos.dao_singleton.ConexaoDB;
+import com.gestorcontactos.model.Categoria;
 
 public class CategoriaDAOImpl implements ICategoriaDAO {
 

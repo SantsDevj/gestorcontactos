@@ -1,4 +1,4 @@
-package model;
+package com.gestorcontactos.model;
 
 import java.time.LocalDate;
 import java.util.ArrayList;

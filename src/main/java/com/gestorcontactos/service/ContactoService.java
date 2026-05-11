@@ -1,10 +1,10 @@
-package service;
+package com.gestorcontactos.service;
 
 import java.util.List;
-import dao.interfaces.IContactoDAO;
-import dao.interfaces.ITelefoneDAO;
-import model.Contacto;
-import model.Telefone;
+import com.gestorcontactos.dao.interfaces.IContactoDAO;
+import com.gestorcontactos.dao.interfaces.ITelefoneDAO;
+import com.gestorcontactos.model.Contacto;
+import com.gestorcontactos.model.Telefone;
 
 public class ContactoService {
 

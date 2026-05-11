@@ -1,8 +1,8 @@
-package service;
+package com.gestorcontactos.service;
 
 import java.time.LocalDate;
-import dao.interfaces.IUtilizadorDAO;
-import model.Utilizador;
+import com.gestorcontactos.dao.interfaces.IUtilizadorDAO;
+import com.gestorcontactos.model.Utilizador;
 
 public class AuthService {
 

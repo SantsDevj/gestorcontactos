@@ -1,4 +1,4 @@
-package model;
+package com.gestorcontactos.model;
 
 public class Telefone {
 

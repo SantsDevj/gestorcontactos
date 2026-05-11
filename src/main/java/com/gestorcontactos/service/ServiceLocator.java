@@ -1,7 +1,7 @@
-package service;
+package com.gestorcontactos.service;
 
-import dao.implementacao.*;
-import dao.interfaces.*;
+import com.gestorcontactos.dao.implementacao.*;
+import com.gestorcontactos.dao.interfaces.*;
 
 public class ServiceLocator {
 

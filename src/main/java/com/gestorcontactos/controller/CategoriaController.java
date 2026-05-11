@@ -1,12 +1,12 @@
-package controller;
+package com.gestorcontactos.controller;
 
 import javafx.fxml.*;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
-import model.Categoria;
-import service.CategoriaService;
-import service.ServiceLocator;
+import com.gestorcontactos.model.Categoria;
+import com.gestorcontactos.service.CategoriaService;
+import com.gestorcontactos.service.ServiceLocator;
 
 import java.net.URL;
 import java.util.List;

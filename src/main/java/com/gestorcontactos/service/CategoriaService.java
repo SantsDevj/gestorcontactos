@@ -1,9 +1,9 @@
-package service;
+package com.gestorcontactos.service;
 
 import java.util.List;
 
-import dao.interfaces.ICategoriaDAO;
-import model.Categoria;
+import com.gestorcontactos.dao.interfaces.ICategoriaDAO;
+import com.gestorcontactos.model.Categoria;
 
 public class CategoriaService {
 

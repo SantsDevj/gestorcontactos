@@ -1,4 +1,4 @@
-package controller;
+package com.gestorcontactos.controller;
 
 import javafx.animation.*;
 import javafx.fxml.*;
@@ -9,11 +9,11 @@ import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-import model.Contacto;
-import model.Utilizador;
-import service.CategoriaService;
-import service.ContactoService;
-import service.ServiceLocator;
+import com.gestorcontactos.model.Contacto;
+import com.gestorcontactos.model.Utilizador;
+import com.gestorcontactos.service.CategoriaService;
+import com.gestorcontactos.service.ContactoService;
+import com.gestorcontactos.service.ServiceLocator;
 
 import java.net.URL;
 import java.util.List;

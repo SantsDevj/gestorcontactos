@@ -1,6 +1,6 @@
-package main.java.dao.interfaces;
+package com.gestorcontactos.dao.interfaces;
 
-import model.Utilizador;
+import com.gestorcontactos.model.Utilizador;
 
 public interface IUtilizadorDAO {
     
