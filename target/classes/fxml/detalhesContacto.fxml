@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="controller.DetalhesContactoController"
+      fx:id="painelRoot"
+      styleClass="side-panel"
+      fillWidth="true"
+      prefHeight="750">
+
+    <!-- CABEÇALHO -->
+    <HBox styleClass="panel-header" alignment="CENTER_RIGHT">
+        <Region HBox.hgrow="ALWAYS"/>
+        <Button text="✕" styleClass="btn-close" onAction="#fechar"/>
+    </HBox>
+
+    <!-- CONTEÚDO scrollável -->
+    <ScrollPane styleClass="scroll-pane"
+                fitToWidth="true" VBox.vgrow="ALWAYS">
+
+        <VBox spacing="20">
+            <padding><Insets top="10" right="24" bottom="24" left="24"/></padding>
+
+            <!-- Avatar + Nome + Badge -->
+            <VBox alignment="CENTER" spacing="10">
+                <StackPane styleClass="details-avatar">
+                    <Label fx:id="lblIniciais" text="EC"
+                           styleClass="details-avatar-text"/>
+                </StackPane>
+                <Label fx:id="lblNome" text="Elena Cruz"
+                       styleClass="details-name"/>
+                <Label fx:id="lblCategoriaBadge" text="VIP"
+                       styleClass="details-badge"/>
+            </VBox>
+
+            <!-- Divider -->
+            <Region styleClass="section-line" maxWidth="Infinity"/>
+
+            <!-- EMAIL -->
+            <VBox spacing="8">
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                    <Label text="EMAIL" styleClass="section-divider-label"/>
+                    <Region HBox.hgrow="ALWAYS" styleClass="section-line"
+                            maxHeight="1"/>
+                </HBox>
+                <HBox styleClass="details-info-box" alignment="CENTER_LEFT"
+                      spacing="12">
+                    <Label text="✉" style="-fx-text-fill: #7B41B3; -fx-font-size: 16px;"/>
+                    <Label fx:id="lblEmail" text="" styleClass="details-info-text"/>
+                </HBox>
+            </VBox>
+
+            <!-- ENDEREÇO -->
+            <VBox spacing="8">
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                    <Label text="ENDEREÇO" styleClass="section-divider-label"/>
+                    <Region HBox.hgrow="ALWAYS" styleClass="section-line"
+                            maxHeight="1"/>
+                </HBox>
+                <HBox styleClass="details-info-box" alignment="CENTER_LEFT"
+                      spacing="12">
+                    <Label text="📍" style="-fx-text-fill: #7B41B3; -fx-font-size: 16px;"/>
+                    <Label fx:id="lblEndereco" text="" styleClass="details-info-text"/>
+                </HBox>
+            </VBox>
+
+            <!-- DATA DE NASCIMENTO -->
+            <VBox spacing="8">
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                    <Label text="DATA DE NASCIMENTO"
+                           styleClass="section-divider-label"/>
+                    <Region HBox.hgrow="ALWAYS" styleClass="section-line"
+                            maxHeight="1"/>
+                </HBox>
+                <HBox styleClass="details-info-box" alignment="CENTER_LEFT"
+                      spacing="12">
+                    <Label text="🎂" style="-fx-text-fill: #7B41B3; -fx-font-size: 16px;"/>
+                    <Label fx:id="lblDataNasc" text="" styleClass="details-info-text"/>
+                </HBox>
+            </VBox>
+
+            <!-- TELEFONES -->
+            <VBox spacing="8">
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                    <Label text="TELEFONES" styleClass="section-divider-label"/>
+                    <Region HBox.hgrow="ALWAYS" styleClass="section-line"
+                            maxHeight="1"/>
+                </HBox>
+                <VBox fx:id="containerTelefones" spacing="8"/>
+            </VBox>
+
+        </VBox>
+    </ScrollPane>
+
+    <!-- RODAPÉ -->
+    <VBox spacing="10">
+        <padding><Insets top="14" right="24" bottom="20" left="24"/></padding>
+        <Region styleClass="section-line" maxWidth="Infinity"/>
+        <HBox spacing="10">
+            <padding><Insets top="8"/></padding>
+            <Button text="✏  Editar" styleClass="btn-outline"
+                    HBox.hgrow="ALWAYS" maxWidth="Infinity"
+                    minHeight="46" onAction="#editarContacto"/>
+            <Button text="🗑  Eliminar" styleClass="btn-danger-outline"
+                    HBox.hgrow="ALWAYS" maxWidth="Infinity"
+                    minHeight="46" onAction="#eliminarContacto"/>
+        </HBox>
+    </VBox>
+</VBox>

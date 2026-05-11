@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="controller.FormContactoController"
+      fx:id="painelRoot"
+      styleClass="side-panel"
+      fillWidth="true"
+      prefHeight="750">
+
+    <!-- CABEÇALHO -->
+    <HBox styleClass="panel-header" alignment="CENTER_LEFT" spacing="12">
+        <Label fx:id="lblTitulo" text="Novo Contacto"
+               styleClass="panel-title" HBox.hgrow="ALWAYS"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Button text="✕" styleClass="btn-close" onAction="#fechar"/>
+    </HBox>
+
+    <!-- FORMULÁRIO (scrollável) -->
+    <ScrollPane styleClass="scroll-pane"
+                fitToWidth="true" VBox.vgrow="ALWAYS">
+
+        <VBox spacing="20">
+            <padding><Insets top="24" right="24" bottom="24" left="24"/></padding>
+
+            <!-- SECÇÃO: DADOS PESSOAIS -->
+            <HBox alignment="CENTER_LEFT" spacing="10">
+                <Label text="DADOS PESSOAIS" styleClass="section-divider-label"/>
+                <Region HBox.hgrow="ALWAYS" styleClass="section-line"
+                        maxHeight="1"/>
+            </HBox>
+
+            <!-- Nome completo -->
+            <VBox spacing="6">
+                <Label text="Nome Completo *" styleClass="field-label"/>
+                <TextField fx:id="campoNome" styleClass="form-field"
+                           promptText="Ex: Ana Silva"/>
+                <Label fx:id="erroNome" styleClass="error-label"
+                       text="" visible="false" managed="false"/>
+            </VBox>
+
+            <!-- Email -->
+            <VBox spacing="6">
+                <Label text="Email" styleClass="field-label"/>
+                <TextField fx:id="campoEmail" styleClass="form-field"
+                           promptText="ana.silva@email.com"/>
+            </VBox>
+
+            <!-- Morada -->
+            <VBox spacing="6">
+                <Label text="Morada" styleClass="field-label"/>
+                <TextField fx:id="campoEndereco" styleClass="form-field"
+                           promptText="Rua das Flores, 123"/>
+            </VBox>
+
+            <!-- Data de nascimento -->
+            <VBox spacing="6">
+                <Label text="Data de Nascimento" styleClass="field-label"/>
+                <DatePicker fx:id="campoDataNasc"
+                            styleClass="form-datepicker"
+                            maxWidth="Infinity"
+                            promptText="DD/MM/AAAA"/>
+            </VBox>
+
+            <!-- SECÇÃO: CATEGORIA -->
+            <HBox alignment="CENTER_LEFT" spacing="10">
+                <Label text="CATEGORIA" styleClass="section-divider-label"/>
+                <Region HBox.hgrow="ALWAYS" styleClass="section-line"
+                        maxHeight="1"/>
+            </HBox>
+
+            <ComboBox fx:id="comboCategoria"
+                      styleClass="form-combo"
+                      maxWidth="Infinity"
+                      promptText="Selecionar categoria..."/>
+
+            <!-- Pills de categorias rápidas -->
+            <HBox fx:id="containerPills" spacing="8" wrapLength="380"/>
+
+            <!-- SECÇÃO: TELEFONES -->
+            <HBox alignment="CENTER_LEFT" spacing="10">
+                <Label text="TELEFONES" styleClass="section-divider-label"/>
+                <Region HBox.hgrow="ALWAYS" styleClass="section-line"
+                        maxHeight="1"/>
+            </HBox>
+
+            <!-- Lista de telefones (preenchida dinamicamente) -->
+            <VBox fx:id="containerTelefones" spacing="8"/>
+
+            <!-- Botão adicionar telefone -->
+            <Button text="＋  Adicionar Telefone"
+                    styleClass="btn-add-phone"
+                    maxWidth="Infinity"
+                    onAction="#adicionarLinhaTelefone"/>
+
+        </VBox>
+    </ScrollPane>
+
+    <!-- RODAPÉ com botões -->
+    <VBox spacing="10">
+        <padding><Insets top="16" right="24" bottom="20" left="24"/></padding>
+        <Region styleClass="section-line" maxWidth="Infinity"/>
+        <padding><Insets top="10"/></padding>
+        <Button text="Guardar" styleClass="btn-primary"
+                maxWidth="Infinity" minHeight="48"
+                onAction="#guardar"/>
+        <Button text="Cancelar" styleClass="btn-outline"
+                maxWidth="Infinity" minHeight="44"
+                onAction="#fechar"/>
+    </VBox>
+</VBox>

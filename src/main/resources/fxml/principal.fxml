@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+
+<StackPane xmlns:fx="http://javafx.com/fxml"
+           fx:controller="controller.PrincipalController"
+           fx:id="rootStack"
+           prefWidth="1200" prefHeight="750">
+
+    <!-- LAYOUT PRINCIPAL -->
+    <HBox fx:id="mainLayout" fillHeight="true">
+
+        <!-- SIDEBAR -->
+        <VBox styleClass="sidebar" spacing="0" fillWidth="true">
+
+            <!-- Logo -->
+            <VBox spacing="2" alignment="CENTER_LEFT">
+                <padding><Insets top="10" right="16" bottom="16" left="16"/></padding>
+                <Label text="GestorContactos" styleClass="sidebar-logo"/>
+                <Label text="Relationship Vault" styleClass="sidebar-sub"/>
+            </VBox>
+
+            <!-- Avatar utilizador -->
+            <VBox alignment="CENTER" spacing="6">
+                <padding><Insets top="4" right="16" bottom="20" left="16"/></padding>
+                <StackPane styleClass="sidebar-avatar-container">
+                    <Label fx:id="lblIniciais" text="JD"
+                           styleClass="sidebar-avatar-text"/>
+                </StackPane>
+                <Label fx:id="lblNomeUtilizador" text=""
+                       styleClass="sidebar-user-name"/>
+            </VBox>
+
+            <!-- Botão novo contacto -->
+            <VBox>
+                <padding><Insets top="0" right="16" bottom="20" left="16"/></padding>
+                <Button text="＋  Novo Contacto"
+                        styleClass="btn-add-contact"
+                        onAction="#abrirFormNovoContacto"/>
+            </VBox>
+
+            <!-- Navegação -->
+            <VBox spacing="4" VBox.vgrow="ALWAYS">
+                <Button fx:id="btnNavContactos"
+                        text="📋  Contactos"
+                        styleClass="nav-item-active"
+                        maxWidth="Infinity"
+                        onAction="#navContactos"/>
+                <Button fx:id="btnNavGrupos"
+                        text="👥  Categorias"
+                        styleClass="nav-item"
+                        maxWidth="Infinity"
+                        onAction="#abrirCategorias"/>
+                <Button fx:id="btnNavRecentes"
+                        text="🕐  Recentes"
+                        styleClass="nav-item"
+                        maxWidth="Infinity"
+                        onAction="#navContactos"/>
+            </VBox>
+
+            <Region VBox.vgrow="ALWAYS"/>
+
+            <!-- Rodapé sidebar -->
+            <VBox spacing="0">
+                <Region styleClass="sidebar-divider" maxWidth="Infinity"/>
+                <padding><Insets top="12"/></padding>
+                <Button text="⚙  Definições"
+                        styleClass="nav-item"
+                        maxWidth="Infinity"/>
+                <Button text="⬡  Sair"
+                        styleClass="nav-item-logout"
+                        maxWidth="Infinity"
+                        onAction="#fazerLogout"/>
+            </VBox>
+        </VBox>
+
+        <!-- ÁREA PRINCIPAL -->
+        <VBox HBox.hgrow="ALWAYS" fillWidth="true">
+
+            <!-- TOP BAR -->
+            <HBox styleClass="top-bar" alignment="CENTER_LEFT" spacing="16">
+
+                <!-- Barra de pesquisa -->
+                <HBox styleClass="search-container" alignment="CENTER_LEFT"
+                      spacing="0" HBox.hgrow="ALWAYS" maxWidth="500">
+                    <Label text="🔍" styleClass="search-icon-label"/>
+                    <TextField fx:id="campoPesquisa"
+                               styleClass="search-field"
+                               promptText="Pesquisar contactos..."
+                               HBox.hgrow="ALWAYS"/>
+                </HBox>
+
+                <Region HBox.hgrow="ALWAYS"/>
+
+                <!-- Ícones direita -->
+                <Button text="🔔" styleClass="btn-icon"/>
+                <Button text="❓" styleClass="btn-icon"/>
+            </HBox>
+
+            <!-- CONTEÚDO -->
+            <ScrollPane styleClass="scroll-pane"
+                        fitToWidth="true"
+                        VBox.vgrow="ALWAYS">
+
+                <VBox styleClass="content-area" spacing="24">
+
+                    <!-- Cabeçalho + botões -->
+                    <HBox alignment="CENTER_LEFT" spacing="12">
+                        <VBox spacing="4" HBox.hgrow="ALWAYS">
+                            <Label text="Directório" styleClass="page-title"/>
+                            <Label text="Gere e organiza os teus contactos."
+                                   styleClass="page-subtitle"/>
+                        </VBox>
+                        <Button text="🔽  Filtrar"
+                                styleClass="btn-outline"
+                                onAction="#filtrarContactos"/>
+                        <Button text="＋  Novo Contacto"
+                                styleClass="btn-primary"
+                                onAction="#abrirFormNovoContacto"/>
+                    </HBox>
+
+                    <!-- Grid de cartões — preenchida dinamicamente -->
+                    <FlowPane fx:id="gridContactos"
+                              hgap="16" vgap="16"
+                              prefWrapLength="900"/>
+
+                </VBox>
+            </ScrollPane>
+        </VBox>
+    </HBox>
+
+    <!-- OVERLAY — painel lateral e modal -->
+    <StackPane fx:id="overlay"
+               visible="false" managed="false"
+               styleClass="overlay-backdrop">
+        <!-- Conteúdo carregado dinamicamente pelo controller -->
+        <HBox fx:id="overlayContent" alignment="CENTER_RIGHT"/>
+    </StackPane>
+
+</StackPane>
