@@ -21,7 +21,7 @@ public class TelefoneDAOImpl implements ITelefoneDAO {
     }
     
     @Override
-    public void adiciona(Telefone telefone, int idContacto) {
+    public void adicionar(Telefone telefone, int idContacto) {
         String sql =
             "INSERT INTO manager.telefone (id_contacto, numero, tipo) " +
             "VALUES (?, ?, ?)";

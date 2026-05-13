@@ -1,0 +1,20 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "MainApp",
+            "request": "launch",
+            "mainClass": "com.gestorcontactos.MainApp",
+            "projectName": "gestorcontactos"
+        },
+        {
+            "type": "java",
+            "name": "Executar GestorContactos",
+            "request": "launch",
+            "mainClass": "MainApp",
+            "projectName": "gestorcontactos",
+            "vmArgs": "--module-path \"${env:PATH_TO_FX}\" --add-modules javafx.controls,javafx.fxml"
+        }
+    ]
+}
