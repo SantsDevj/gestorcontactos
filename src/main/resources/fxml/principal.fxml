@@ -4,7 +4,7 @@
 <?import javafx.geometry.*?>
 
 <StackPane xmlns:fx="http://javafx.com/fxml"
-           fx:controller="controller.PrincipalController"
+           fx:controller="com.gestorcontactos.controller.PrincipalController"
            fx:id="rootStack"
            prefWidth="1200" prefHeight="750">
 

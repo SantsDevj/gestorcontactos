@@ -4,7 +4,7 @@
 <?import javafx.geometry.*?>
 
 <VBox xmlns:fx="http://javafx.com/fxml"
-      fx:controller="controller.FormContactoController"
+      fx:controller="com.gestorcontactos.controller.FormContactoController"
       fx:id="painelRoot"
       styleClass="side-panel"
       fillWidth="true"

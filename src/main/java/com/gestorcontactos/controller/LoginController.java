@@ -107,7 +107,7 @@ public class LoginController implements Initializable {
             Scene scene = new Scene(root);
             scene.setUserData(ctrl);
             scene.getStylesheets().add(
-                getClass().getResource("/css/styles.css").toExternalForm());
+                getClass().getResource("/css/style.css").toExternalForm());
 
             Stage stage = (Stage) rootPane.getScene().getWindow();
 
@@ -128,7 +128,7 @@ public class LoginController implements Initializable {
             Parent root = FXMLLoader.load(getClass().getResource(fxmlPath));
             Scene scene = new Scene(root);
             scene.getStylesheets().add(
-                getClass().getResource("/css/styles.css").toExternalForm());
+                getClass().getResource("/css/style.css").toExternalForm());
             Stage stage = (Stage) rootPane.getScene().getWindow();
             FadeTransition fade = new FadeTransition(Duration.millis(300), root);
             fade.setFromValue(0);

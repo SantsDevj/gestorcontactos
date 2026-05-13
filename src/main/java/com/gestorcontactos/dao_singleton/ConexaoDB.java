@@ -14,10 +14,10 @@ public class ConexaoDB {
 
     // Constantes de ligação — declaradas como atributos da classe, não dentro do construtor
     private static final String URL =
-        "jdbc:sqlserver://localhost;databaseName=sistema_gerenciamento_contactos;" +
+        "jdbc:sqlserver://localhost:1433;databaseName=sistema_gerenciamento_contactos;" +
         "encrypt=true;trustServerCertificate=true;";
-    private static final String USER     = "sa";
-    private static final String PASSWORD = "151025";
+    private static final String USER     = "";
+    private static final String PASSWORD = "";
 
     // Construtor privado — impede que outras classes usem new ConexaoDB()
     private ConexaoDB() {
@@ -27,8 +27,7 @@ public class ConexaoDB {
             this.connection = DriverManager.getConnection(URL, USER, PASSWORD);
             System.out.println("Ligação à base de dados estabelecida com sucesso.");
         } catch (SQLException e) {
-            System.out.println("Erro ao estabelecer ligação à base de dados.");
-            e.printStackTrace();
+            throw new RuntimeException("Falha ao conectar ao SQL Server: " + e.getMessage(), e);
         }
     }
 

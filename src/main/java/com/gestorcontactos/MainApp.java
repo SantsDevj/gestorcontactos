@@ -16,7 +16,7 @@ public class MainApp extends Application {
 
         Scene scene = new Scene(root, 1200, 750);
         scene.getStylesheets().add(
-            getClass().getResource("/css/styles.css").toExternalForm());
+            getClass().getResource("/css/style.css").toExternalForm());
 
         primaryStage.setTitle("GestorContactos");
         primaryStage.setScene(scene);

@@ -4,7 +4,7 @@
 <?import javafx.geometry.*?>
 
 <StackPane xmlns:fx="http://javafx.com/fxml"
-           fx:controller="controller.CategoriaController"
+           fx:controller="com.gestorcontactos.controller.CategoriaController"
            prefWidth="600" prefHeight="600">
 
     <VBox styleClass="modal-card" alignment="TOP_CENTER"

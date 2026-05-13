@@ -6,7 +6,7 @@
 <?import javafx.scene.text.*?>
 
 <HBox xmlns:fx="http://javafx.com/fxml"
-      fx:controller="controller.LoginController"
+      fx:controller="com.gestorcontactos.controller.LoginController"
       fx:id="rootPane"
       prefWidth="1200" prefHeight="750"
       fillHeight="true">

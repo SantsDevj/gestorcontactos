@@ -5,7 +5,7 @@
 <?import javafx.scene.image.*?>
 
 <HBox xmlns:fx="http://javafx.com/fxml"
-      fx:controller="controller.CadastroController"
+      fx:controller="com.gestorcontactos.controller.CadastroController"
       fx:id="rootPane"
       prefWidth="1200" prefHeight="750"
       fillHeight="true">
