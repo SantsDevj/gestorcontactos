@@ -16,7 +16,7 @@ public class ConexaoDB {
     private static final String URL =
         "jdbc:sqlserver://localhost:1433;databaseName=sistema_gerenciamento_contactos;" +
         "encrypt=true;trustServerCertificate=true;";
-    private static final String USER     = "santo_lz4201i";
+    private static final String USER     = "sa";
     private static final String PASSWORD = "151025";
 
     // Construtor privado — impede que outras classes usem new ConexaoDB()
